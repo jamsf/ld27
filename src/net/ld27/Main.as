@@ -2,6 +2,7 @@ package net.ld27
 {
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import net.ld27.worlds.WiredBomb;
 	
 	import net.flashpunk.Engine;
 	import net.flashpunk.FP;
@@ -20,7 +21,7 @@ package net.ld27
 			super(800, 600, 60, false);
 			
 			// Create initial world
-			//FP.world = new PreGame();
+			FP.world = new WiredBomb();
 		}
 		
 		override public function init():void
@@ -34,7 +35,7 @@ package net.ld27
 			
 			if (Input.check(Key.DELETE))
 				FP.console.enable();
-			Input.mouseCursor = "hide";
+			//Input.mouseCursor = "hide";
 		}
 	}
 	
