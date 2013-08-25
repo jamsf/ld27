@@ -2,6 +2,7 @@ package net.ld27
 {
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import net.ld27.worlds.Title;
 	import net.ld27.worlds.WiredBomb;
 	
 	import net.flashpunk.Engine;
@@ -9,6 +10,8 @@ package net.ld27
 	import net.flashpunk.World;
 	import net.flashpunk.utils.Input;
 	import net.flashpunk.utils.Key;
+	
+	import net.ld27.worlds.PreGame;
 	
 	/**
 	 * ...
@@ -21,7 +24,8 @@ package net.ld27
 			super(800, 600, 60, false);
 			
 			// Create initial world
-			FP.world = new WiredBomb();
+			//FP.world = new WiredBomb("e");
+			FP.world = new PreGame();
 		}
 		
 		override public function init():void

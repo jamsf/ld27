@@ -3,6 +3,8 @@ package net.ld27.entities.bombs
 	import net.flashpunk.Entity;
 	import net.flashpunk.graphics.Text;
 	import net.flashpunk.utils.Data;
+	import net.flashpunk.FP;
+	import net.ld27.entities.ui.Fade;
 	
 	/**
 	 * ...
@@ -17,7 +19,12 @@ package net.ld27.entities.bombs
 		private var _startTime: Number;
 		private var _targetTime: Number;
 		
-		public function BombTimer(bombTime : int, x:int, y:int) 
+		private var _bombBase : BombBase;
+		
+		private var _defusedTimer : Number;
+		private var _defusedTime : Number;
+		
+		public function BombTimer(bombTime : int, x:int, y:int, base : BombBase) 
 		{
 			_bombTime = bombTime;
 			
@@ -25,6 +32,10 @@ package net.ld27.entities.bombs
 			graphic = _text;
 			_text.size = 36;
 			_started = false;
+			
+			_defusedTimer = 60;
+			
+			_bombBase = base;
 		}
 		
 		private function start() : void
@@ -41,9 +52,20 @@ package net.ld27.entities.bombs
 		override public function update():void 
 		{
 			super.update();
+			
+			if (_bombBase.defused)
+			{
+				_defusedTimer -= 1;
+				if (_defusedTimer == 0)
+				{
+					FP.world.add(new Fade());
+				}
+				return;
+			}
+			
 			if (!_started)
 			{
-				_text.text = "00:00:0000";
+				_text.text = "00:00:000";
 				return;
 			}
 			
@@ -79,17 +101,22 @@ package net.ld27.entities.bombs
 					break;
 			}
 			
+			if (timeLeft <= 5000)
+			{
+				_text.color = 0xFF1111;
+			}
+			
 			// Display time
-			if (timeLeft > 0 )
+			if (timeLeft > 0)
 			{
 				var counter:String = minStr + ":" + secStr + ":" + milliStr;
 				_text.text = counter;
 			}
 			else
 			{
-				//trace("TIME'S UP");
-				var newTime:String = "00:00:0000";
+				var newTime:String = "00:00:000";
 				_text.text = newTime;
+				_bombBase.detonated = true;
 			}
 		}
 		
