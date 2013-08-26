@@ -22,7 +22,7 @@ package net.ld27.entities.Hints
 		{
 			_unusedEasy = new Array(rg0, rg1, rg2, rg3, gr0, gr1, gr2, gr3);
 			_unusedMedium = new Array(rgb, rbg, bgr, brg, grb, gbr);
-			_unusedHard = new Array(rgbo, rgob, grbo, gobr, brog, bgro, orbg, ogbr);
+			_unusedHard = new Array(rbgo, rgob, grbo, gobr, borg, bgro, orbg, ogbr);
 		}
 		
 		private var _unusedEasy : Array;
@@ -98,16 +98,16 @@ package net.ld27.entities.Hints
 					return new Array(0x00FF00, 0xFF0000, 0x0000FF);
 				case gbr:
 					return new Array(0x00FF00, 0x0000FF, 0xFF0000);
-				case rgbo:
-					return new Array(0xFF0000, 0x00FF00, 0x0000FF, 0xFF9900);
+				case rbgo:
+					return new Array(0xFF0000, 0x0000FF, 0x00FF00, 0xFF9900);
 				case rgob:
 					return new Array(0xFF0000, 0x00FF00, 0xFF9900, 0x0000FF);
 				case grbo:
 					return new Array(0x00FF00, 0xFF0000, 0x0000FF, 0xFF9900);
 				case gobr:
 					return new Array(0x00FF00, 0xFF9900, 0x0000FF, 0xFF0000);
-				case brog:
-					return new Array(0x0000FF, 0xFF0000, 0xFF9900, 0x00FF00);
+				case borg:
+					return new Array(0x0000FF, 0xFF9900, 0xFF0000, 0x00FF00);
 				case bgro:
 					return new Array(0x0000FF, 0x00FF00, 0xFF0000, 0xFF9900);
 				case orbg:
@@ -127,7 +127,7 @@ package net.ld27.entities.Hints
 		private const gr0 : String = "I was playing catch on the school field with an old friend when he asked, Are you really joining the marines? I said yes, and threw the ball.";
 		private const gr1 : String = "While I was packing, I saw my mother outside on the lawn, right near our big apple tree. I think she was praying.";
 		private const gr2 : String = "The recruiter in the camo shook his head. This isn't WW2, he said, we have better technology. The chances of you getting shot are pretty slim.";
-		private const gr3 : String = "I never succeeded much at school, I was much better on the field with a ball.";
+		private const gr3 : String = "I never succeeded much at school, I was much better on the field with a ball. Maybe I'll be good with a gun too.";
 			
 		//-------------------------| MEDIUM HINTS |-------------------------//
 		private const rgb : String = "I didn't realize but there was a big blood blotch on my camo pants. I had to remember to clean them or else the sergeant would kill me.";
@@ -138,11 +138,11 @@ package net.ld27.entities.Hints
 		private const gbr : String = "I didn't have too much money, but I used what I had to send my girlfriend Irises through the mail. I was mad when I didn't hear a reply.";
 		
 		//-------------------------| HARD HINTS |-------------------------//
-		private const rgbo : String = "I shot a little girl who was holding something questionable in her hand. Turns out it was just a bottle of water. The plastic bottle made it look like an IED, it's hard to see when everything looks so dusty.";
+		private const rbgo : String = "I shot a little girl who was holding something questionable in her hand. Turns out it was just water. The dark green plastic bottle made it look like an IED, it's hard to see when everything looks so dusty.";
 		private const rgob : String = "I watched an IED blow the head off of a highly-skilled green beret I had just met several hours prior. All I remember was the bloody base of his neck covered in dust and a spray of water from what's left of his canteen.";
 		private const grbo : String = "I would have given anything to see a tree or plants. There's nothing except to get sunburnt, hydrate, and everything gets covered in dust. No wonder these people are always angry, they live in a shithole.";
 		private const gobr : String = "This isn't your daddy's war in the Jungle, our sergeant said, it's the desert. Make sure to hydrate, and watch the road for any IEDs.";
-		private const brog : String = "The sky here in the desert looks exactly like it does in Ohio. It's sometimes equally boring here too. I would pray to hear gunshots, but they never happened.";
+		private const borg : String = "The sky here in the desert looks exactly like it does in Ohio. It's sometimes equally boring here too. I would pray for someone to come fight us, but instead they just took our money for cheap trinquetes.";
 		private const bgro : String = "In my survival pack I had several bottles of water, some money to buy things in the local marketplaces, and a first-aid kit for treating wounds, all of which was covered in dust. The dust gets everywhere.";
 		private const orbg : String = "In the desert, there's really not much shooting, just bombs. Waiting, drinking water, more waiting, then BOOM! Your friend gets a one way ticket back to lush North Carolina sans his legs.";
 		private const ogbr : String = "After patrolling in miles of rock and dust, we came across an opium field. Our orders were to burn it, and we did. While the smoke started rising towards the sky, my buddy said how we were burning millions of dollars.";

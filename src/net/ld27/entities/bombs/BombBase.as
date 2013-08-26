@@ -103,9 +103,6 @@ package net.ld27.entities.bombs
 			{
 				trace("YA BLEW UP");
 				detonated = true;
-				
-				// Change to the death world
-				FP.world = new Death();
 				return;
 			}
 			

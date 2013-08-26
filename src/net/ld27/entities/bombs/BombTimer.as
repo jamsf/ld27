@@ -5,6 +5,7 @@ package net.ld27.entities.bombs
 	import net.flashpunk.utils.Data;
 	import net.flashpunk.FP;
 	import net.ld27.entities.ui.Fade;
+	import net.ld27.worlds.Death;
 	
 	/**
 	 * ...
@@ -52,6 +53,13 @@ package net.ld27.entities.bombs
 		override public function update():void 
 		{
 			super.update();
+			
+			if (_bombBase.detonated)
+			{
+				// Change to the death world
+				FP.world = new Death();
+				return;
+			}
 			
 			if (_bombBase.defused)
 			{
