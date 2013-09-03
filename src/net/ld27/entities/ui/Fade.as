@@ -3,6 +3,7 @@ package net.ld27.entities.ui
 	import net.flashpunk.Entity;
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.FP;
+	import net.ld27.worlds.Ending;
 	import net.ld27.worlds.Title;
 	
 	import net.ld27.worlds.WiredBomb;
@@ -54,6 +55,10 @@ package net.ld27.entities.ui
 				else if (BombFactory.Instance.BombsCreated < 15)
 				{
 					FP.world = new WiredBomb("h");
+				}
+				else if (BombFactory.Instance.BombsCreated >= 15)
+				{
+					FP.world = new Ending();
 				}
 				
 				++BombFactory.Instance.BombsCreated;
